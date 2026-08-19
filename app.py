@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 from pathlib import Path
 from typing import Any
@@ -138,8 +139,8 @@ def generate(payload: dict[str, Any]) -> dict[str, Any]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=APP_TITLE)
-    parser.add_argument("--host", default="127.0.0.1")
-    parser.add_argument("--port", default=8002, type=int)
+    parser.add_argument("--host", default=os.getenv("HOST", "127.0.0.1"))
+    parser.add_argument("--port", default=int(os.getenv("PORT", "8002")), type=int)
     args = parser.parse_args()
     serve(generate, title=APP_TITLE, base_dir=BASE_DIR, host=args.host, port=args.port)
 

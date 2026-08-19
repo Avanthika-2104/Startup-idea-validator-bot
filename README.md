@@ -17,6 +17,14 @@ An AI cannot prove that a market exists. This project never invents market size,
 - Dependency-free Python web application
 - Automated tests and CI workflow
 
+## Deploy online
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Avanthika-2104/Startup-idea-validator-bot)
+
+The included `render.yaml` creates a free Python web service in Render's Singapore region, runs the automated tests during the build, starts the app on Render's assigned port, and checks `/health`.
+
+Render's free service can sleep after 15 minutes without traffic, so the first visit after a quiet period can take about one minute to load.
+
 ## Run
 
 ```bash
@@ -50,3 +58,5 @@ Idea form -> validation layer -> offline scorer or Responses API -> schema check
 ## Honest project status
 
 The complete UI, offline evaluation, API integration layer, and tests work locally. Genuine model-generated analysis requires API access supplied by the person running the application.
+
+The public deployment should initially use offline mode. Do not add an OpenAI key to a public demo without authentication, rate limits, and a spending limit.
