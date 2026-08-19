@@ -1,1 +1,52 @@
-# Startup-idea-validator-bot
+# VentureCheck — Startup Idea Validator Bot
+
+A browser-based GenAI application that turns a startup idea into a structured hypothesis review, highlights uncertain assumptions, and proposes evidence-gathering experiments.
+
+## Important distinction
+
+An AI cannot prove that a market exists. This project never invents market size, customer interviews, competitors, traction, or revenue. Its score measures how clearly the hypothesis is described—not whether the startup will succeed.
+
+## Features
+
+- Five-dimension idea score from 0–100
+- Problem, customer, solution, revenue, and differentiation review
+- Critical assumptions and risk identification
+- Customer-interview, landing-page, and concierge-pilot experiments
+- Offline deterministic demo mode
+- Optional OpenAI Responses API mode
+- Dependency-free Python web application
+- Automated tests and CI workflow
+
+## Run
+
+```bash
+python app.py
+```
+
+Open `http://127.0.0.1:8002`.
+
+### OpenAI mode
+
+```powershell
+$env:OPENAI_API_KEY="your-key"
+$env:OPENAI_MODEL="gpt-5.6-luna"
+python app.py
+```
+
+Keep API keys outside the repository.
+
+## Test
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+## Architecture
+
+```text
+Idea form -> validation layer -> offline scorer or Responses API -> schema checks -> evidence plan
+```
+
+## Honest project status
+
+The complete UI, offline evaluation, API integration layer, and tests work locally. Genuine model-generated analysis requires API access supplied by the person running the application.

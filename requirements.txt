@@ -1,0 +1,2 @@
+# No third-party packages are required.
+# The applications run on Python 3.11+ using the standard library.
